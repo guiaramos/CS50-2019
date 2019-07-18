@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
 
 # Variables
 hash_ = sys.argv[1]
-salt = ahash[0:2]
+salt = hash_[0:2]
 letters = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # Start script
