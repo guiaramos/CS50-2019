@@ -2,13 +2,13 @@
 from cs50 import get_float
 
 class cash():
-    
+
     # Getting the info provided
     def __init__(self, amount, paid):
 
         self.amount = amount
         self.paid = paid
-        
+
         # Defining coins
         self.coins = {}
 
@@ -33,7 +33,7 @@ class cash():
                 dueChange["Quarters"] += 1
             else:
                 break
-        
+
         while True:
             if change >= self.coins["Dimes"]:
                 change -= self.coins["Dimes"]
@@ -56,7 +56,7 @@ class cash():
                 break
 
         self.show(dueChange)
-    
+
     # Printing
     def show(self,dueChange):
         print(f"the change is: {dueChange}")
