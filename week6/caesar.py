@@ -2,29 +2,31 @@
 import sys
 from cs50 import get_string
 
-# Check if key was informed and assign it
-try:
-    key = int(sys.argv[1])
-except IndexError:
-    print("Usage: ./caesar key")
-    sys.exit()
+# Check for the key provided
+if len(sys.argv) != 2:
+    print("Usage: ./caesar k")
+    sys.exit(1)
 
-# Print key
-print (f"the key provided is: {key}")
+# Assigning the key
+key = int(sys.argv[1])
 
-# Ask for the plaintext to be ciphered
+# Getting the plaintext
 plaintext = get_string("plaintext: ")
 
-# Start cipher
+# Start the script
 print("ciphertext: ", end="")
 
-for i in plaintext:
-   
-    if i.isalpha():
-        if i.islower():
-            c = ((((ord(i) + key) - 97) % 26 ) + 97)
-        else:
-            c = ((((ord(i) + key) - 65) % 26 ) + 65)
-        print(chr(c), end="")
-    else:
-        print(i, end="")
+for char in plaintext:
+    if not char.isalpha():
+        print(char, end="")
+        continue
+
+    # offset in case of uppercase or lowercase
+    ascii_offset = 65 if char.isupper() else 97
+
+    c = ord(ch) - ascii_offset
+    cipher = (c + key) % 26
+
+    print(chr(cipher + ascii_offset), end="")
+
+print()

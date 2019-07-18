@@ -30,11 +30,11 @@ while creditCard > 0:
 isValid = (sumEvens + sumDoubleOdds) % 10 == 0
 first_two_digits = (digit1 * 10) + digit2
 
-if digit1 == 4 and numDigits >= 13 and numDigits <= 16 and is_valid:
+if digit1 == 4 and numDigits >= 13 and numDigits <= 16 and isValid:
     print("VISA\n")
-elif first_two_digits >= 51 and first_two_digits <= 55 and numDigits == 16 and is_valid:
+elif first_two_digits >= 51 and first_two_digits <= 55 and numDigits == 16 and isValid:
     print("MASTERCARD\n")
-elif (first_two_digits == 34 or first_two_digits == 37) and numDigits == 15 and is_valid:
+elif (first_two_digits == 34 or first_two_digits == 37) and numDigits == 15 and isValid:
     print("AMEX\n")
 else:
     print("INVALID\n")
