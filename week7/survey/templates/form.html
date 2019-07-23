@@ -6,19 +6,86 @@
     <h1 class="mb-3">Form</h1>
 
     <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
-    <form action="/form" method="post">
+    <form action="/form" class="needs-validation" method="post" name="survey" onsubmit="return validateForm()" novalidate>
 
-        <!-- TODO -->
+        <!-- Name text inputs -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="firstName" placeholder="First Name" autocomplete="off" autofocus required>
+            <p id="noFirstName" class="error"></p>
+            <input type="text" class="form-control" name="lastName" placeholder="Last Name" autocomplete="off" required>
+            <p id="noLastName" class="error"></p>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback"> Please your name and last name</div>
+        </div>
+
+        <!-- Grade select menu -->
+        <div class="form-group">
+            <select class="form-control" name="career" required>
+                <option selected disabled>Career</option>
+                <option>Front-end</option>
+                <option>Back-end</option>
+                <option>DevOps</option>
+                <option>Student</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback"> Please select your career</div>
+        </div>
+
+        <!-- Position radio buttons -->
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="Python" value="Python">
+                <label class="form-check-label" for="Python">
+                    Python
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="C" value="C">
+                <label class="form-check-label" for="C">
+                    C
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="JavaScript" value="JavaScript">
+                <label class="form-check-label" for="JavaScript">
+                    JavaScript
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="Ruby" value="Ruby">
+                <label class="form-check-label" for="Ruby">
+                    Ruby
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="Swift" value="Swift">
+                <label class="form-check-label" for="Swift">
+                    Swift
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="language" id="Java" value="Java">
+                <label class="form-check-label" for="Java">
+                    Java
+                </label>
+            </div>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback"> Please select your language</div>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email address" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback"> Please input your email</div>
+        </div>
 
         <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
         <button class="btn btn-primary" type="submit">Submit</button>
 
     </form>
 
-    <script>
-
-        /* TODO */
-
-    </script>
+    <script src="static\script.js"></script>
 
 {% endblock %}
